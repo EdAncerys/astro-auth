@@ -1,26 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { SignedIn, SignedOut } from 'astro-clerk-auth/components/control';
-import { UserButton, SignIn } from 'astro-clerk-auth/components/interactive';
 import Card from '@components/Card.astro';
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1 class="p-unit-lg text-center font-bold">Invoice Wizard</h1>
-    <SignedIn>
-      <UserButton />
-      <h2 class="p-unit-md">Welcome back, user.firstName!</h2>
-      <p class="p-unit-sm">
-        You're signed in. You can now access the Invoice Wizard.
-      </p>
-    </SignedIn>
-
-    <SignedOut>
-      <SignIn routing="hash" />
-      <p class="p-unit-sm">
-        Public access. You can sign in to access the Invoice Wizard.
-      </p>
-    </SignedOut>
+    <h2 class="p-unit-md">Welcome back, user.firstName!</h2>
+    <p class="p-unit-sm">
+      You're signed in. You can now access the Invoice Wizard.
+    </p>
   </main>
 </Layout>

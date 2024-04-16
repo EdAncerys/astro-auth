@@ -1,0 +1,27 @@
+---
+import {
+  SignedIn,
+  SignedOut,
+  ClerkLayout,
+} from 'astro-clerk-auth/components/control';
+import { SignIn } from 'astro-clerk-auth/components/interactive';
+import type { RefactorActionInfo } from 'typescript';
+
+interface Props {
+  isAuth?: boolean;
+}
+
+const { isAuth } = Astro.props;
+---
+
+<section class="flex flex-1 content-center">
+  <ClerkLayout client:load>
+    <SignedIn>
+      <slot />
+    </SignedIn>
+
+    <SignedOut>
+      <SignIn />
+    </SignedOut>
+  </ClerkLayout>
+</section>
