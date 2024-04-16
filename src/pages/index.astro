@@ -12,8 +12,8 @@ import UI from '@components/UI';
       Invoice Wizard
     </p>
 
-    <Pricing client:load />
-    <UI client:load />
+    <Pricing client:component-hydration />
+    <UI client:visible />
   </main>
 </Layout>
 @components/UI
