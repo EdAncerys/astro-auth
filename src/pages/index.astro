@@ -1,14 +1,20 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Card from '@components/Card.astro';
+import Header from '@components/Header.astro';
+import UI from '@components/UI';
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
+    <Header />
+
     <h1 class="p-unit-lg text-center font-bold">Invoice Wizard</h1>
     <h2 class="p-unit-md">Welcome back, user.firstName!</h2>
     <p class="p-unit-sm">
       You're signed in. You can now access the Invoice Wizard.
     </p>
+
+    <UI client:visible />
   </main>
 </Layout>
+@components/UI

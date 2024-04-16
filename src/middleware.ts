@@ -7,10 +7,16 @@ const isProtectedPage = createRouteMatcher(['/dashboard(.*)']);
 const isProtectedAPI = createRouteMatcher(['/api/v1(.*)']);
 
 export const onRequest = clerkMiddleware((auth, context, next) => {
-  console.log('onRequest', context.request.url, auth());
+  // console.log('🐞 onRequest', context.request.url, auth());
 
   if (isProtectedPage(context.request) && !auth().userId) {
-    return auth().redirectToSignIn();
+    // redirect to login page
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: '/sign-in',
+      },
+    });
   }
 
   if (isProtectedAPI(context.request) && !auth().userId) {

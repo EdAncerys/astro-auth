@@ -1,12 +1,19 @@
 {
   "extends": "astro/tsconfigs/strict",
-  // Add your project-specific settings here
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "/Users/edancerys/repositories/invoicewizard",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@layouts/*": ["./src/layouts/*"],
-      "@pages/*": ["./src/pages/*"]
-    }
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
