@@ -1,17 +1,19 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import Pricing from '@components/Pricing.astro';
 import UI from '@components/UI';
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1 class="p-unit-lg text-center font-bold">Invoice Wizard</h1>
-    <h2 class="p-unit-md">Welcome back, user.firstName!</h2>
-    <p class="p-unit-sm">
-      You're signed in. You can now access the Invoice Wizard.
+    <p
+      class="mt-2 text-4xl font-bold tracking-tight text-center text-gray-900 sm:text-5xl"
+    >
+      Invoice Wizard
     </p>
 
-    <UI client:visible />
+    <Pricing client:load />
+    <UI client:load />
   </main>
 </Layout>
 @components/UI
