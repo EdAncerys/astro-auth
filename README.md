@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Astro SAAS Base Application `Invoice Wizard`.
 
 ```sh
 npm create astro@latest -- --template basics
@@ -49,6 +49,34 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## App Page Structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+#### Home Page
+
+- Description: Welcome page providing an overview of the application.
+- Functionality: Display general information about the app, features, and benefits.
+- Customer Interaction: Customers can navigate to other pages using the menu.
+
+#### Invoicing Dashboard
+
+- Description: Central hub for managing invoices.
+- Functionality: Create, view, edit, and send invoices. Track payment status.
+- Customer Interaction: Customers can create new invoices, view existing ones, and update invoice details.
+
+#### Invoice Creation Page
+
+- Description: Page for creating new invoices.
+- Functionality: Fill in details like client information, items, due dates, etc.
+- Customer Interaction: Customers input invoice details and save for later or send directly.
+
+#### Invoice Details Page
+
+- Description: Detailed view of a specific invoice.
+- Functionality: View invoice details, payment status, and history.
+- Customer Interaction: Customers can see all information related to a specific invoice.
+
+#### Settings Page
+
+- Description: Page for managing account settings.
+- Functionality: Update profile information, notification preferences, etc.
+- Customer Interaction: Customers can personalize their account settings as needed.

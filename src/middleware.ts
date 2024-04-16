@@ -11,12 +11,12 @@ export const onRequest = clerkMiddleware((auth, context, next) => {
 
   if (isProtectedPage(context.request) && !auth().userId) {
     // redirect to login page
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: '/sign-in',
-      },
-    });
+    // return new Response(null, {
+    //   status: 302,
+    //   headers: {
+    //     Location: '/sign-in',
+    //   },
+    // });
   }
 
   if (isProtectedAPI(context.request) && !auth().userId) {

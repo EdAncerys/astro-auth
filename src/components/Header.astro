@@ -1,13 +1,16 @@
 ---
+import { classNames } from '@lib/index.js';
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
+const { pathname } = Astro?.url;
+const classHover = 'text-blue-600 hover:text-blue-400';
 ---
 
 <header
-  class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-slate-200 text-sm py-4"
+  class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full text-sm py-4 border-b-2"
 >
   <nav
     class="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between"
@@ -50,7 +53,8 @@ const { title } = Astro.props;
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+          ><pathname d="M18 6 6 18"></pathname><pathname d="m6 6 12 12"
+          ></pathname></svg
         >
       </button>
       <button
@@ -65,19 +69,37 @@ const { title } = Astro.props;
       class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:grow-0 sm:basis-auto sm:block sm:order-2"
     >
       <div
-        class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5"
+        class={classNames(
+          'flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:mt-0 sm:ps-5'
+        )}
       >
-        <a class="font-medium text-blue-500" href="#" aria-current="page"
-          >Landing</a
+        <a
+          class={classNames(
+            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+            pathname === '/' && classHover
+          )}
+          href="/">Home</a
         >
-        <a class="font-medium text-gray-600 hover:text-gray-400" href="#"
-          >Account</a
+        <a
+          class={classNames(
+            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+            pathname === '/dashboard' && classHover
+          )}
+          href="/dashboard">Dashboard</a
         >
-        <a class="font-medium text-gray-600 hover:text-gray-400" href="#"
-          >Work</a
+        <a
+          class={classNames(
+            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+            pathname === '/sign-in' && classHover
+          )}
+          href="/sign-in">Sighn In</a
         >
-        <a class="font-medium text-gray-600 hover:text-gray-400" href="#"
-          >Blog</a
+        <a
+          class={classNames(
+            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+            pathname === '/sign-up' && classHover
+          )}
+          href="/sign-up">Sign Up</a
         >
       </div>
     </div>

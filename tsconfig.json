@@ -3,15 +3,10 @@
   "compilerOptions": {
     "baseUrl": "/Users/edancerys/repositories/invoicewizard",
     "paths": {
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@layouts/*": [
-        "./src/layouts/*"
-      ],
-      "@pages/*": [
-        "./src/pages/*"
-      ]
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@pages/*": ["./src/pages/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
