@@ -1,4 +1,6 @@
 ---
+import { UserButton } from 'astro-clerk-auth/components/react';
+import { ClerkLayout } from 'astro-clerk-auth/components/control';
 import { classNames } from '@lib/index.js';
 interface Props {
   title?: string;
@@ -9,107 +11,110 @@ const { pathname } = Astro?.url;
 const classHover = 'text-blue-600 hover:text-blue-400';
 ---
 
-<header
-  class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4"
->
-  <nav
-    class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
-    aria-label="Global"
+<ClerkLayout>
+  <header
+    class="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm py-4"
   >
-    <div class="flex items-center justify-between">
-      <a class="flex-none" href="/">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z"
-          ></path>
-        </svg>
-      </a>
-      <div class="sm:hidden">
-        <button
-          type="button"
-          class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-          data-hs-collapse="#navbar-image-2"
-          aria-controls="navbar-image-2"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            class="hs-collapse-open:hidden flex-shrink-0 size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><line x1="3" x2="21" y1="6" y2="6"></line><line
-              x1="3"
-              x2="21"
-              y1="12"
-              y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg
-          >
-          <svg
-            class="hs-collapse-open:block hidden flex-shrink-0 size-4"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
-          >
-        </button>
-      </div>
-    </div>
-    <div
-      id="navbar-image-2"
-      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+    <nav
+      class="max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between"
+      aria-label="Global"
     >
-      <div
-        class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5"
-      >
-        <a
-          class={classNames(
-            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
-            pathname === '/' && classHover
-          )}
-          href="/">Home</a
-        >
-        <a
-          class={classNames(
-            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
-            pathname === '/dashboard' && classHover
-          )}
-          href="/dashboard">Dashboard</a
-        >
-        <a
-          class={classNames(
-            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
-            pathname === '/sign-in' && classHover
-          )}
-          href="/sign-in">Sighn In</a
-        >
-        <a
-          class={classNames(
-            'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
-            pathname === '/sign-up' && classHover
-          )}
-          href="/sign-up">Sign Up</a
-        >
+      <div class="flex items-center justify-between">
+        <a class="flex-none" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z"
+            ></path>
+          </svg>
+        </a>
+        <div class="sm:hidden">
+          <button
+            type="button"
+            class="hs-collapse-toggle p-2 inline-flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
+            data-hs-collapse="#navbar-image-2"
+            aria-controls="navbar-image-2"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              class="hs-collapse-open:hidden flex-shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><line x1="3" x2="21" y1="6" y2="6"></line><line
+                x1="3"
+                x2="21"
+                y1="12"
+                y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg
+            >
+            <svg
+              class="hs-collapse-open:block hidden flex-shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+            >
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
-</header>
+      <div
+        id="navbar-image-2"
+        class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block"
+      >
+        <div
+          class="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5"
+        >
+          <a
+            class={classNames(
+              'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+              pathname === '/' && classHover
+            )}
+            href="/">Home</a
+          >
+          <a
+            class={classNames(
+              'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+              pathname === '/dashboard' && classHover
+            )}
+            href="/dashboard">Dashboard</a
+          >
+          <a
+            class={classNames(
+              'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+              pathname === '/sign-in' && classHover
+            )}
+            href="/sign-in">Sighn In</a
+          >
+          <a
+            class={classNames(
+              'font-medium text-gray-600 hover:text-gray-400 transition-colors duration-300',
+              pathname === '/sign-up' && classHover
+            )}
+            href="/sign-up">Sign Up</a
+          >
+          <UserButton />
+        </div>
+      </div>
+    </nav>
+  </header>
+</ClerkLayout>
